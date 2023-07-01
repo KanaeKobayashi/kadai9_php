@@ -6,7 +6,7 @@ require_once('db_connect.php');
 $id = $_GET['id'];
 
 // 指定されたIDのデータを取得します
-$stmt = $pdo->prepare("SELECT * FROM books WHERE id = :id");
+$stmt = $pdo->prepare("SELECT * FROM gs_bm_table WHERE id = :id");
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 
@@ -25,7 +25,7 @@ if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 // 削除の確認が得られた場合はデータベースから該当する行を削除します
 if (isset($_POST['confirm'])) {
-    $stmt = $pdo->prepare("DELETE FROM books WHERE id = :id");
+    $stmt = $pdo->prepare("DELETE FROM gs_bm_table WHERE id = :id");
     $stmt->bindParam(':id', $id);
     $stmt->execute();
 
