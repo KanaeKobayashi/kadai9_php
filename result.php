@@ -25,7 +25,7 @@ require_once('db_connect.php');
 if ($stmt->rowCount() > 0) {
   // 表の開始を表示
   echo '<table border="1" class="center-table">';
-  echo '<tr><th>名前</th><th>本のタイトル</th><th>著者</th><th>評価</th><th>コメント</th></tr>';
+  echo '<tr><th>名前</th><th>本のタイトル</th><th>著者</th><th>評価</th><th>コメント</th><th>編集</th><th>削除</th></tr>';
 
   while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $name = $row['name'];
@@ -43,6 +43,8 @@ if ($stmt->rowCount() > 0) {
     echo '<td>' . $author . '</td>';
     echo '<td>' . $rating . '</td>';
     echo '<td>' . $comment . '</td>';
+    echo '<td><a href="edit.php?id=' . $id . '">編集</a></td>';
+    echo '<td><a href="delete.php?id=' . $id . '">削除</a></td>';
     echo '</tr>';
   }
   // 表の終了を表示
