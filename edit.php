@@ -28,15 +28,19 @@ if ($status === false) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>データ編集</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link
+  href="https://unpkg.com/sanitize.css"
+  rel="stylesheet"
+/>
+    <link rel="stylesheet" href="css/edit.css">
 </head>
 <body>
 <form class="formWrapper" action="write.php" method="post">
-        <label for="name">名前:<?=$result['name']?></label>
+        <label for="name">名前:<br><p><?=$result['name']?></p></label>
   
-        <label for="bookTitle">おすすめの本のタイトル:<?=$result['bookTitle']?></label>
+        <label for="bookTitle">おすすめの本のタイトル:<br><p><?=$result['bookTitle']?></p></label>
 
-        <label for="author">本の著者:<?=$result['author']?></label>
+        <label for="author">本の著者:<br><p><?=$result['author']?></p></label>
 
 
 
