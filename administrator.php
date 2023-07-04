@@ -14,7 +14,7 @@
     <li><a href="totalling.php" class="back-button">集計結果を表示する<br></a></li>
     <li><a href="result.php" class="back-button">回答一覧</a></li>
     <li> <a href="export_csv.php" class="back-button">CSVをダウンロードする</a></li>
-
+    <li> <a href="import_csv.php" class="back-button">CSVをインポートする</a></li>
     </div>
 </body>
 </html>
