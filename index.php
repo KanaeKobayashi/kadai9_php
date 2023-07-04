@@ -64,26 +64,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   href="https://unpkg.com/sanitize.css"
   rel="stylesheet"
 />
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<link rel="stylesheet" href="./css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
-    <h1 class="title">あなたのオススメの本を教えてください</h1>
+    <h1 class="title">あなたのオススメの本を教えてください
+    <button id="searchButton" onclick="window.location.href = 'search.php' "style="border-radius: 50%; border: none; padding:2px;background-color:white;"><span class="material-symbols-outlined">
+search
+</span></button>
+    </h1>
     </header>
     <form class="formWrapper" action="write.php" method="post">
-        <label for="name">名前:</label>
-            <input type="text" name="name" id="name" required><br>
-  
-            <label for="email">Eメール:</label>
-            <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required><br>
-  
-            <label for="bookTitle">おすすめの本のタイトル:</label>
+
+
+        <label for="bookTitle">おすすめの本のタイトル:</label>
             <input type="text" name="bookTitle" id="bookTitle" required><br>
 
             <label for="author">本の著者:</label>
             <input type="text" name="author" id="author" required><br>
-
+        </div>
 
         <label for="rating">オススメ度:</label>
             <div class="star-rating">
@@ -97,6 +99,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="comment">オススメコメント:</label>
             <textarea name="comment" id="comment" required></textarea><br>
   
+            <label for="name">名前:</label>
+            <input type="text" name="name" id="name" required><br>
+  
+            <label for="email">Eメール:</label>
+            <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required><br>
+        <div id="selectionResult">
+
+
+
         <input type="submit" value="送信">
         <input type="button" class="transparent-button" value="オススメ一覧を見る" onclick="location.href='result.php'">
     </form>
@@ -107,6 +118,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button id="adminButton" style="display: none;">Go to admin page</button>
 
     <script>
+
+    // ページ読み込み時にローカルストレージから選択した本の情報を読み込む
+    const selectedTitle = localStorage.getItem('selectedTitle');
+        const selectedAuthor = localStorage.getItem('selectedAuthor');
+        if (selectedTitle && selectedAuthor) {
+            const selectedTitleElement = document.getElementById('bookTitle');
+            const selectedAuthorElement = document.getElementById('author');
+            selectedTitleElement.value = selectedTitle;
+            selectedAuthorElement.value = selectedAuthor;
+            // ローカルストレージの情報を削除
+            localStorage.removeItem('selectedTitle');
+            localStorage.removeItem('selectedAuthor');
+        }
+
+        // 選択された本の情報をローカルストレージに保存
+        function selectBook(title, authors) {
+            localStorage.setItem('selectedTitle', title);
+            localStorage.setItem('selectedAuthor', authors);
+            // 元のページに戻る
+            window.location.href = 'write.php';
+        }
+
+        // サーチページから選択された本の情報を取得
+        const searchParams = new URLSearchParams(window.location.search);
+        const selectedTitleParam = searchParams.get('title');
+        const selectedAuthorParam = searchParams.get('author');
+        if (selectedTitleParam && selectedAuthorParam) {
+            // 選択された本の情報をフォームに表示
+            const selectedTitleElement = document.getElementById('bookTitle');
+            const selectedAuthorElement = document.getElementById('author');
+            selectedTitleElement.value = selectedTitleParam;
+            selectedAuthorElement.value = selectedAuthorParam;
+        }
+
+    //隠しぼたん出現
     const starRating = document.querySelector('.star-rating');
     const stars = starRating.querySelectorAll('input');
 

@@ -26,9 +26,11 @@ require_once('db_connect.php');
 if ($stmt->rowCount() > 0) {
   // 表の開始を表示
   echo '<table border="1" class="center-table">';
-  echo '<tr><th>名前</th><th>本のタイトル</th><th>著者</th><th>評価</th><th>コメント</th><th>編集</th><th>削除</th></tr>';
+  echo '<tr><th>id</th><th>名前</th><th>email</th><th>本のタイトル</th><th>著者</th><th>評価</th><th>コメント</th><th>編集</th><th>削除</th></tr>';
 
   while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $id = $row['id'];
+    $email = $row['email'];
     $name = $row['name'];
     $bookTitle = $row['bookTitle'];
     $author = $row['author'];
@@ -39,7 +41,9 @@ if ($stmt->rowCount() > 0) {
 
     // データの表示
     echo '<tr>';
+    echo '<td>' . $id . '</td>';
     echo '<td class="name">' . $name . '</td>';
+    echo '<td>' . $email . '</td>';
     echo '<td>' . $bookTitle . '</td>';
     echo '<td>' . $author . '</td>';
     echo '<td>' . $rating . '</td>';
