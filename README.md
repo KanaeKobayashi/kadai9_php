@@ -30,9 +30,9 @@
  	- 2.https://qiita.com/asami___t/items/9ef2d97593b7d983971c
 
 ## 目次（多くなって分からなくなりそうなので書いておく）
--1. index.php …　登録フォーム
--2. funcs.php   バリデーション処理関数
--3. thankyou.php  リダイレクト処理
+	-1.index.php …　登録フォーム
+	-2. funcs.php   バリデーション処理関数
+	-3.thankyou.php  リダイレクト処理
 -4. write.php 　DBへ追加機能
 -5. result.php   ユーザーが見るおすすめ一覧表
 -6. resultAdmin.php 管理者画面から見えるおすすめ一覧
