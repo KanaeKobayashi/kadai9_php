@@ -92,4 +92,26 @@ header button{
 .formWrapper input[type="button"]:hover {
   background-color: #0056b3;
 }
+#searchResults {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* 各本の間のギャップを制御 */
+}
 
+#searchResults div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(20% - 20px); /* ギャップを補償するために20pxを引く */
+  box-sizing: border-box;
+}
+
+#searchResults img {
+  width: 100%;
+  height: auto; /* 画面に合わせて画像の大きさを変更するギャップを補償するために20pxを引く */
+}
+
+button{
+  cursor: pointer;
+}

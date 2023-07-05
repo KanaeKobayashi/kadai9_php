@@ -2,13 +2,31 @@
 //1.  DB接続します
 require_once('db_connect.php');
 
+// 昇順か降順かのフラグと検索文字列
+$order = isset($_GET['order']) ? $_GET['order'] : 'asc';
+$search = isset($_GET['search']) ? $_GET['search'] : '';
+
+if (!empty($search)) {
+  //2. データ取得SQL作成（検索文字列がある場合）
+  $sql = "SELECT * FROM gs_bm_table WHERE bookTitle LIKE ?";
+  //3. SQL実行
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute(["%$search%"]);
+} else {
+  //2. データ取得SQL作成（検索文字列がない場合）
+  $sql = "SELECT * FROM gs_bm_table ORDER BY date $order";
+  //3. SQL実行
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>LIST</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="./css/result.css">
   <style>
@@ -22,6 +40,31 @@ require_once('db_connect.php');
   </style>
 </head>
 <body>
+<h2>オススメ一覧</h2>
+<!-- 昇順、降順ボタンの作成 -->
+<div style="display: flex;">
+  <form action="" method="get" style="margin-right: 20px;">
+    <input type="hidden" name="order" value="desc">
+    <input type="submit" value="新しく投稿された順">
+  </form>
+  <form action="" method="get">
+    <input type="hidden" name="order" value="asc">
+    <input type="submit" value="古い順">
+  </form>
+</div>
+<!-- 検索フォームの作成 -->
+<div style="margin-top: 20px;">
+  <form action="" method="get">
+    <input type="text" name="search" placeholder="本のタイトルで検索" value="<?php echo $search; ?>">
+    <input type="submit" value="検索">
+  </form>
+</div>
+<!-- 検索結果クリアボタン -->
+<div style="margin-top: 20px;">
+  <form action="" method="get">
+    <input type="submit" value="検索結果をクリア">
+  </form>
+</div>
 <?php
 if ($stmt->rowCount() > 0) {
   // 表の開始を表示
@@ -55,7 +98,7 @@ if ($stmt->rowCount() > 0) {
   // 表の終了を表示
   echo '</table>';
 } else {
-  echo 'まだアンケートがありません。';
+  echo 'まだ登録がありません。';
 }
 ?>
 

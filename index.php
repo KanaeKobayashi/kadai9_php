@@ -22,7 +22,6 @@ if ($status == false) {
   }
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // フォームデータの受け取り、特殊文字をHTMLエンティティに変換
     $name = isset($_POST['name']) ? h($_POST['name']) : '';
@@ -79,12 +78,11 @@ search
     </header>
     <form class="formWrapper" action="write.php" method="post">
 
-
         <label for="bookTitle">おすすめの本のタイトル:</label>
-            <input type="text" name="bookTitle" id="bookTitle" required><br>
+            <input type="text" name="bookTitle" id="bookTitle" placeholder="本のタイトル" required><br>
 
             <label for="author">本の著者:</label>
-            <input type="text" name="author" id="author" required><br>
+            <input type="text" name="author" id="author" placeholder="著者" required><br>
         </div>
 
         <label for="rating">オススメ度:</label>
@@ -97,22 +95,18 @@ search
             </div>
   
         <label for="comment">オススメコメント:</label>
-            <textarea name="comment" id="comment" required></textarea><br>
+            <textarea name="comment" id="comment" placeholder="こんなところがオススメというところを紹介してね" required></textarea><br>
   
             <label for="name">名前:</label>
-            <input type="text" name="name" id="name" required><br>
+            <input type="text" name="name" id="name" placeholder="関東太郎" required><br>
   
             <label for="email">Eメール:</label>
-            <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required><br>
+            <input type="email" name="email" id="email" placeholder="abc@example.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required><br>
         <div id="selectionResult">
-
-
 
         <input type="submit" value="送信">
         <input type="button" class="transparent-button" value="オススメ一覧を見る" onclick="location.href='result.php'">
     </form>
-
-
 
     <!-- 隠しコマンドによってボタンが出現したらアドミン画面に移動 -->
     <button id="adminButton" style="display: none;">Go to admin page</button>

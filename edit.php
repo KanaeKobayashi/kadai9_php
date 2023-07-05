@@ -23,7 +23,7 @@ if ($status === false) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,14 +35,12 @@ if ($status === false) {
     <link rel="stylesheet" href="css/edit.css">
 </head>
 <body>
-<form class="formWrapper" action="write.php" method="post">
+<form class="formWrapper" action="update.php" method="post">
         <label for="name">名前:<br><p><?=$result['name']?></p></label>
   
         <label for="bookTitle">おすすめの本のタイトル:<br><p><?=$result['bookTitle']?></p></label>
 
         <label for="author">本の著者:<br><p><?=$result['author']?></p></label>
-
-
 
         <label for="rating">オススメ度:</label>
             <div class="star-rating">
@@ -62,7 +60,7 @@ if ($status === false) {
             <input type="hidden" name="email" value="<?=$result['email']?>">
   
         <input type="submit" value="更新">
-        <input type="button" class="transparent-button" value="オススメ一覧を見る" onclick="location.href='result.php'">
+        <input type="button" class="transparent-button" value="更新せずにオススメ一覧を見る" onclick="location.href='result.php'">
     </form>
 </body>
 </html>

@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
   }
+
   .admin-menu {
     background-color: rgba(51, 51, 51, 0.8);
     color: white;
@@ -33,3 +34,4 @@ body {
   .admin-menu a:hover {
     background-color: #da190b;
   }
+
