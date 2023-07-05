@@ -28,4 +28,25 @@
 - [参考記事] 
 	- 1.https://www.php.net/manual/ja/function.fgetcsv.php(CSV入力）
  	- 2.https://qiita.com/asami___t/items/9ef2d97593b7d983971c
-  	- 3.
+
+## 目次（多くなって分からなくなりそうなので書いておく）
+-1. index.php …　登録フォーム
+-2. funcs.php   バリデーション処理関数
+-3. thankyou.php  リダイレクト処理
+-4. write.php 　DBへ追加機能
+-5. result.php   ユーザーが見るおすすめ一覧表
+-6. resultAdmin.php 管理者画面から見えるおすすめ一覧
+-7. totalling.php   レーディングのグラフ
+-8. search.php   APIを使った本の検索画面と処理
+-9. import_csv.php  csvインポート用画面
+-10.process_import.php csvインポート処理
+-11.export_csv.php  csvエクスポート機能
+-12.edit.php  編集画面と処理
+-13.delete.php  削除機能
+-14.db_connect.php  DB接続に関する共通コード
+-15.administrator.php  管理者画面　index.phpからadminを打ってボタンを押すと遷移する
+その他
+upload フォルダ　　インポートするCSVを保管する
+img フォルダ　　画像をストアしてあるフォルダ
+css フォルダ　　cssファイルを格納
+DBフォルダ　　課題確認用として、DBの中身が分かるもの
