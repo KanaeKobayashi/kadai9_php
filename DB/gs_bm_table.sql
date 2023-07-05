@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2023 年 7 月 02 日 04:53
+-- 生成日時: 2023 年 7 月 05 日 14:28
 -- サーバのバージョン： 10.4.28-MariaDB
 -- PHP のバージョン: 8.2.4
 
@@ -56,7 +56,18 @@ INSERT INTO `gs_bm_table` (`id`, `name`, `email`, `bookTitle`, `author`, `rating
 (11, 'さやか', 'cvcv@ll.hhs.ff', '求道ー日本的生き方の実践ー', '井上 敬康', 4, '私のための道を極める\r\nhttps://amzn.asia/d/hhAON5c', '2023-06-27 21:37:13'),
 (17, '坊主', 'boose@kk.nn.hh', '最高の集い方 記憶に残る体験をデザインする', 'プリヤ・パーカー', 4, '盛り上げるための秘訣\r\nhttps://amzn.asia/d/7QzsZki', '2023-06-27 21:42:34'),
 (18, 'かなえ', '123@jo.ni', '上杉鷹山', '童門 冬二', 5, '私はこの人の考え方が好きです。ケネディ大統領も参考にしたと聞いています。\r\nhttps://amzn.asia/d/92bonp0', '2023-06-27 21:53:13'),
-(19, '山田花子', '12345@yahoo.co.jp', '１週間で基礎から学ぶLaravel入門', 'Minatomi ', 4, 'Kindle版はunlimitedで読めます。\r\n', '2023-07-01 13:15:07');
+(19, '薫', '237@ybb.be.jp', '編集できるかな', 'csv', 3, '編集できたぞ。', '2023-07-05 20:17:21'),
+(24, '花子', '234@ybb.be.jp', 'これはテストです', 'テスト', 3, 'テストだお', '2023-07-04 23:00:14'),
+(29, '薫', '237@ybb.be.jp', 'やっとインポートできた', 'csv', 3, 'csvだお', '2023-07-04 23:54:35'),
+(31, '清子', 'sayako@example.com', '設計部門改革バイブル', '谷口潤', 4, 'BOMが大切ってわかっちゃいるけど・・・', '2023-07-05 00:07:35'),
+(32, 'かなえ', 'kana@example.com', '猫のいる日々', '大佛次郎', 3, 'やっぱり猫がいないとね', '2023-07-05 00:49:04'),
+(33, '薫', '237@ybb.be.jp', 'やっとインポートできた', 'csv', 3, 'csvだお', '2023-07-05 07:07:07'),
+(34, '都', 'miyako@example.com', 'ねこのおもちゃ絵', '長井裕子', 4, '猫がおもちゃだから', '2023-07-05 07:27:08'),
+(35, 'すみか', 'sumika@example.com', 'おうちで学べるプログラミングのきほん', '河村進', 3, '基本がやっぱり大切', '2023-07-05 07:39:08'),
+(36, 'マリア', 'maria@example.com', '猫語レッスン帖', 'Unknown Author', 4, '猫と会話したいと思うのは私だけではないでしょう。\r\nhttps://amzn.asia/d/5uQMju3', '2023-07-05 19:49:51'),
+(37, 'マリア', 'maria@example.com', '猫語レッスン帖', 'Unknown Author', 4, '猫と会話したいと思うのは私だけではないでしょう。\r\nhttps://amzn.asia/d/5uQMju3', '2023-07-05 19:50:37'),
+(38, 'マリア', 'maria@example.com', '猫語レッスン帖', 'Unknown Author', 4, '猫と会話したいと思うのは私だけではないでしょう。\r\n四度目の正直\r\nhttps://amzn.asia/d/5uQMju3', '2023-07-05 20:10:00'),
+(39, 'かなえ', 'kanae@example.com', 'ものぐさ自転車の悦楽　折りたたみ自転車で始める新しき日々', '疋田智', 5, 'うちのさけぶろ（ブロンプトン）に乗って、旅行に行きたい。\r\n折りたたみ自転車を買うときにかなりしっかり読みました。', '2023-07-05 21:21:07');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -76,7 +87,7 @@ ALTER TABLE `gs_bm_table`
 -- テーブルの AUTO_INCREMENT `gs_bm_table`
 --
 ALTER TABLE `gs_bm_table`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
