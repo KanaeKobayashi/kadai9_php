@@ -29,7 +29,7 @@
 	- 1.https://www.php.net/manual/ja/function.fgetcsv.php(CSV入力）
  	- 2.https://qiita.com/asami___t/items/9ef2d97593b7d983971c
 
-## 目次（多くなって分からなくなりそうなので書いておく）
+## 目次
 	-1.index.php …　登録フォーム
 	-2. funcs.php   バリデーション処理関数
 	-3.thankyou.php  リダイレクト処理
